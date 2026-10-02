@@ -75,7 +75,7 @@ Quando invocado via `/implementation-planner "<caminho-architecture-md> <numero-
 
 ## Templates de Geração
 
-Use **exatamente** os templates definidos em `.claude/skills/implementation-planner.md` (seções A, B, C, D). Substitua placeholders `<...>` com dados extraídos da arquitetura.
+Use **exatamente** os templates definidos em `.claude/references/implementation-plan-templates.md` (seções A, B, C, D). Substitua placeholders `<...>` com dados extraídos da arquitetura.
 
 ### Regras de Preenchimento
 

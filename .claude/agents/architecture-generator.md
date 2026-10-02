@@ -14,7 +14,7 @@ Quando invocado via `/architecture-generator "<input>"` ou chamado diretamente:
 
 1. **Parse o input** — extraia: ideia geral, funcionalidades desejadas, restrições conhecidas, contexto adicional
 2. **Inferir nome do projeto** — crie um slug kebab-case (ex.: "finance-app", "scheduling-saas")
-3. **Conduza o brainstorming** — dimensão por dimensão, seguindo o skill em `.claude/skills/architecture-generator.md`
+3. **Conduza o brainstorming** — dimensão por dimensão, seguindo as instruções do skill em `.claude/skills/architecture-generator/SKILL.md` e o guia em `.claude/references/architecture-generator-guide.md`
 4. **Gere o arquivo final** — salve em `docs/architecture/<projeto>-architecture.md`
 
 ## Metodologia de Brainstorming

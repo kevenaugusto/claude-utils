@@ -1,8 +1,7 @@
----
-description: "Transforma documento de arquitetura (padrão architecture-generator) em planos de implementação por incremento (backend/frontend/testes)"
-argument-hint: "<caminho-do-architecture-md> <numero-incremento>"
-allowed-tools: [Read, Write, Edit, Bash, Glob, Grep, Task, Agent]
----
+# Templates de Planos de Implementação
+
+> **Documento de referência** — não é invocável. Lido por path pelo agente
+> `agents/implementation-planner.md` (templates A, B, C, D).
 
 # /implementation-planner
 

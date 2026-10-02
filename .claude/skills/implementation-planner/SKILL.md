@@ -1,7 +1,9 @@
 ---
+name: implementation-planner
 description: "Gera planos de implementação por incremento a partir de documento de arquitetura (padrão finance-app)"
 argument-hint: "<caminho-architecture-md> <numero-incremento>"
 allowed-tools: [Read, Write, Edit, Bash, Glob, Grep, Task, Agent]
+disable-model-invocation: true
 ---
 
 # /implementation-planner
@@ -56,7 +58,7 @@ docs/plans/
 
 ## Personalização
 
-Para adaptar o estilo dos planos gerados, edite `.claude/skills/implementation-planner.md`:
+Para adaptar o estilo dos planos gerados, edite `.claude/references/implementation-plan-templates.md`:
 - Seções dos templates (A, B, C, D) → estrutura dos markdowns gerados
 - Regras de extração → quais seções da arquitetura mapear para cada parte do plano
 - Convenções herdadas → monetário=string, enums=StrEnum, fetch wrapper, etc.

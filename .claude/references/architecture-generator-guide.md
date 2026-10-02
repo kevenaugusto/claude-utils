@@ -1,13 +1,13 @@
-# Skill: Architecture Generator
+# Guia do Architecture Generator
 
-> **Invocação:** `/architecture-generator "<ideia + restrições + funcionalidades>"`
-> **Exemplo:** `/architecture-generator "App de finanças pessoais local-only: importação OFX/OCR, classificação automática, alertas de limite, relatórios PDF. Stack preferida: Python + React. Roda no desktop do usuário. Sem nuvem."`
+> **Documento de referência** — não é invocável. Complementa a skill
+> `skills/architecture-generator/SKILL.md`, que define o slash command.
 
 ---
 
 ## Descrição
 
-Este skill conduz um **brainstorming arquitetural estruturado e interativo** (uma dimensão por vez) para qualquer ideia de projeto de software, e produz um arquivo **`<projeto>-architecture.md`** completo seguindo o padrão do arquivo de referência (`docs/architecture/finance-app-architecture.md`).
+Esta skill conduz um **brainstorming arquitetural estruturado e interativo** (uma dimensão por vez) para qualquer ideia de projeto de software, e produz um arquivo **`<projeto>-architecture.md`** completo seguindo o padrão do arquivo de referência (`docs/architecture/finance-app-architecture.md`).
 
 ---
 
@@ -63,7 +63,8 @@ Este skill conduz um **brainstorming arquitetural estruturado e interativo** (um
 | Arquivo | Papel |
 |---|---|
 | `.claude/agents/architecture-generator.md` | **Agente especialista** — contém toda a lógica de brainstorming, templates, validações, geração do arquivo final |
-| `.claude/skills/architecture-generator.md` | **Este arquivo** — define o slash command e como invocar o agente |
+| `.claude/skills/architecture-generator/SKILL.md` | **Este workflow** — define o slash command e o template de output (12 seções) |
+| `.claude/references/architecture-generator-guide.md` | **Este arquivo** — guia de uso, exemplos, personalização e troubleshooting |
 
 ---
 
@@ -106,6 +107,8 @@ Para adaptar o estilo do output, edite `.claude/agents/architecture-generator.md
 - Seção **Habilidades Técnicas** → profundidade esperada
 - Tabela de **Conflitos Conhecidos** → adicione regras do seu contexto
 
+O template das 12 seções de output vive em `.claude/skills/architecture-generator/SKILL.md`, na seção **Output Final**.
+
 ---
 
 ## Exemplos Adicionais
@@ -139,7 +142,7 @@ Para adaptar o estilo do output, edite `.claude/agents/architecture-generator.md
 ## Troubleshooting
 
 | Problema | Solução |
-|---|---|
+|----------|---------|
 | Agente não encontrado | Verifique se `.claude/agents/architecture-generator.md` existe |
 | Arquivo não salvo | Verifique permissão de escrita em `docs/architecture/` |
 | Sessão muito longa | Use "TBD" para decisões menores; resolva no final |

@@ -1,7 +1,9 @@
 ---
+name: architecture-generator
 description: "Conduz brainstorming arquitetural estruturado (12 dimensões) e gera documento <projeto>-architecture.md completo"
 argument-hint: "<ideia + restrições + funcionalidades>"
 allowed-tools: [Read, Write, Edit, Bash, Glob, Grep, Task, Agent]
+disable-model-invocation: true
 ---
 
 # /architecture-generator
