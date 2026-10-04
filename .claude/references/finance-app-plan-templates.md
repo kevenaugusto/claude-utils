@@ -1,9 +1,9 @@
-# Templates de Planos de Implementação
+# Templates de Planos — finance-app
 
 > **Documento de referência** — não é invocável. Lido por path pelo agente
-> `agents/implementation-planner.md` (templates A, B, C, D).
+> `agents/finance-app-implementation-planner.md` (templates A, B, C, D).
 
-# /implementation-planner
+# /finance-app-implementation-planner
 
 Gera planos de implementação detalhados a partir de um documento de arquitetura gerado pelo `/architecture-generator`, seguindo o padrão do `finance-app`.
 

@@ -1,20 +1,26 @@
 ---
-name: implementation-planner
-description: "Gera planos de implementação por incremento a partir de documento de arquitetura (padrão finance-app)"
+name: finance-app-implementation-planner
+description: "Gera planos de implementação por incremento para o projeto finance-app, seguindo o padrão de docs/architecture/finance-app-architecture.md (escrito à mão, não gerado pelo architecture-generator)"
 argument-hint: "<caminho-architecture-md> <numero-incremento>"
 allowed-tools: [Read, Write, Edit, Bash, Glob, Grep, Task, Agent]
 disable-model-invocation: true
 ---
 
-# /implementation-planner
+# /finance-app-implementation-planner
 
-Gera planos de implementação detalhados (backend, frontend, testes) a partir de um documento de arquitetura gerado pelo `/architecture-generator`, seguindo o padrão do `finance-app`.
+> ⚠️ **Workflow específico do projeto finance-app.** Consome o documento
+> `docs/architecture/finance-app-architecture.md`, escrito à mão e **não** gerado
+> pelo `/architecture-generator`. As convenções aqui (monetário como string,
+> `StrEnum`, SQLAlchemy 2.0, React Query, Vitest) são específicas desse projeto.
+> Não aplicar a outros documentos.
+
+Gera planos de implementação detalhados (backend, frontend, testes) a partir do documento de arquitetura do `finance-app`.
 
 ## Uso
 
 ```bash
 # No terminal, dentro do projeto que tem o arquivo de arquitetura:
-/implementation-planner "docs/architecture/meu-projeto-architecture.md" 1
+/finance-app-implementation-planner "docs/architecture/meu-projeto-architecture.md" 1
 ```
 
 **Parâmetros:**
@@ -35,10 +41,10 @@ Gera planos de implementação detalhados (backend, frontend, testes) a partir d
 
 ```bash
 # Gerar planos do Incremento 1 para finance-app
-/implementation-planner "docs/architecture/finance-app-architecture.md" 1
+/finance-app-implementation-planner "docs/architecture/finance-app-architecture.md" 1
 
 # Gerar planos do Incremento 2 (quando pronto)
-/implementation-planner "docs/architecture/finance-app-architecture.md" 2
+/finance-app-implementation-planner "docs/architecture/finance-app-architecture.md" 2
 ```
 
 ## Saída esperada (Incremento 1)
@@ -58,7 +64,7 @@ docs/plans/
 
 ## Personalização
 
-Para adaptar o estilo dos planos gerados, edite `.claude/references/implementation-plan-templates.md`:
+Para adaptar o estilo dos planos gerados, edite `.claude/references/finance-app-plan-templates.md`:
 - Seções dos templates (A, B, C, D) → estrutura dos markdowns gerados
 - Regras de extração → quais seções da arquitetura mapear para cada parte do plano
 - Convenções herdadas → monetário=string, enums=StrEnum, fetch wrapper, etc.
