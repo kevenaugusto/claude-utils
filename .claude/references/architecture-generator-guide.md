@@ -7,7 +7,7 @@
 
 ## Descrição
 
-Esta skill conduz um **brainstorming arquitetural estruturado e interativo** (uma dimensão por vez) para qualquer ideia de projeto de software, e produz um arquivo **`<projeto>-architecture.md`** completo seguindo o padrão do arquivo de referência (`docs/architecture/finance-app-architecture.md`).
+Esta skill conduz um **brainstorming arquitetural estruturado e interativo** (uma dimensão por vez) para qualquer ideia de projeto de software, e produz um arquivo **`<projeto>-architecture.md`** completo seguindo o template de 12 seções definido em `.claude/skills/architecture-generator/SKILL.md`.
 
 ---
 
@@ -44,7 +44,7 @@ Esta skill conduz um **brainstorming arquitetural estruturado e interativo** (um
 ## Exemplo de Uso Completo
 
 ```bash
-# No terminal, dentro do projeto finance-app:
+# No terminal, dentro do projeto alvo:
 /architecture-generator "SaaS de agendamento para salões: multi-tenant, WhatsApp Business API, pagamentos Stripe, relatórios. Stack: Node + React. Deploy na AWS. Time: 3 devs, 4 meses."
 ```
 
@@ -136,6 +136,23 @@ O template das 12 seções de output vive em `.claude/skills/architecture-genera
 | **Valide consistência** | Se escolhas conflitarem, aponte e negocie. |
 | **Permita "pular por agora"** | Marque como `TBD` e retome no final. |
 | **Revise tudo junto ao final** | Antes de gerar arquivo, mostre resumo consolidado para aprovação. |
+
+---
+
+## Calibração de Qualidade
+
+Um documento de arquitetura está pronto quando:
+
+- **Tem as 12 seções preenchidas** — sem placeholders `<...>` ou `...` restantes
+- **Diagramas ASCII legíveis** em Visão Geral, Modelagem (ER), Fluxos e Estrutura
+- **Decisões numeradas (D1, D2...)** com alternativas e trade-off principal explícito
+- **Entidades com tipos concretos**, constraints, FKs e enums — não "campo1, campo2"
+- **Fluxos derivados do domínio real** — não reaproveitar exemplos de outros projetos
+- **Roadmap com incrementos derivados das dependências**, não fases genéricas
+- **Riscos com probabilidade, impacto e mitigação concreta**
+- **700+ linhas** como referência de densidade
+
+Se algum item não se aplica ao projeto, remover a seção em vez de deixar vazia.
 
 ---
 

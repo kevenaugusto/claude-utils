@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 # /architecture-generator
 
-Conduz um **brainstorming arquitetural interativo** dimensão por dimensão e produz um arquivo `docs/architecture/<slug>-architecture.md` no padrão do `finance-app-architecture.md`.
+Conduz um **brainstorming arquitetural interativo** dimensão por dimensão e produz um arquivo `docs/architecture/<slug>-architecture.md` no template de 12 seções definido na seção **Output Final**.
 
 ---
 
@@ -23,7 +23,7 @@ Conduz um **brainstorming arquitetural interativo** dimensão por dimensão e pr
 ## O que faz (fluxo)
 
 1. **Parse** do input → extrai ideia, features, restrições, contexto
-2. **Inferir slug** do projeto (ex.: `finance-app`, `saas-agendamento`)
+2. **Inferir slug** do projeto (ex.: `project-name`, `my-saas`)
 3. **Loop 12 dimensões** (uma por vez, interativo):
    - Mostra decisões já tomadas (contexto)
    - Apresenta 2-3 opções com tabela Prós/Contras + recomendação fundamentada
@@ -115,16 +115,30 @@ Conduz um **brainstorming arquitetural interativo** dimensão por dimensão e pr
 
 ### 4.2 Frontend (<Framework>)
 - Páginas/Rotas
-- Hooks Customizados
-- Stores (Estado Global)
+- Hooks / helpers
+- Estado (client-side / cache de servidor)
 
 ---
 
 ## 5. Fluxos de Integração (ASCII + detalhes)
-5.1 Importação OFX → Parser → Classifier → Save → Review
-5.2 OCR Comprovante → Upload → Extração → Classificação → Save
-5.3 Alerta de Limite → Scheduler → Verificação → Notificação
-5.4 Geração PDF → Template → Dados → Render → Download
+Um subsection por fluxo principal do domínio, numerado conforme a quantidade real.
+Para cada fluxo: diagrama ASCII rotulado + passo a passo numerado + edge cases + critérios de aceite.
+
+<!-- Exemplo de FORMATO (não do domínio — adapte ao projeto real):
+### 5.1 <Nome do Fluxo> → <Etapa> → <Etapa> → <Persistência> → <Destino>
+
+```
+<Origem> ──▶ <Processamento> ──▶ <Validação> ──▶ <Armazenamento>
+              │                      │
+              ▼                      ▼
+        <efeito colateral>    <falha → rollback>
+```
+
+- **Passo 1: <Origem>** — ...
+- **Passo 2: <Processamento>** — ...
+- **Edge cases:** ...
+- **Aceite:** ...
+-->
 
 ---
 
@@ -157,11 +171,11 @@ Conduz um **brainstorming arquitetural interativo** dimensão por dimensão e pr
 ---
 
 ## 10. Roadmap de Incrementos
+Fases derivadas das dependências entre componentes — não usar numeração fixa.
 | Inc | Foco | Entregáveis-chave | Estimativa |
 |---|---|---|---|
-| 1 | Fundação | Setup, models, CRUD base, auth | ... |
-| 2 | Core A | ... | ... |
-| 3 | Core B | ... | ... |
+| 1 | <dependência mínima para o próximo incremento> | ... | ... |
+| 2 | <próximo bloco com valor observável> | ... | ... |
 
 ---
 
